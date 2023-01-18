@@ -8,7 +8,7 @@ module.exports = (env, arg) => ({
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
 
   output: {
-    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:9001/' : '/remote_react/',
+    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:3001/' : '/remote_react/',
   },
 
   resolve: {
@@ -19,7 +19,7 @@ module.exports = (env, arg) => ({
   },
 
   devServer: {
-    port: 9001,
+    port: 3001,
     historyApiFallback: true,
     headers: {'Access-Control-Allow-Origin': '*'}
   },

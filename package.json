@@ -1,5 +1,5 @@
 {
-    "name": "next_react",
+    "name": "WMF",
     "private": true,
     "scripts": {
         "build": "yarn workspaces run build",

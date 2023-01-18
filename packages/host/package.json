@@ -1,8 +1,12 @@
 {
+  "name": "host_next",
   "private": true,
   "scripts": {
     "start": "next dev",
     "build": "next build"
+  },
+  "devDependencies": {
+    "webpack": "^5.57.1"
   },
   "dependencies": {
     "next": "^13.1.2",

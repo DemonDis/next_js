@@ -5,11 +5,6 @@
     "build": "node git.js && webpack --mode production",
     "start": "webpack serve --open --mode development"
   },
-  "license": "MIT",
-  "author": {
-    "name": "Dmitry Shibikin",
-    "email": "dd@other-vision.com"
-  },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/plugin-transform-runtime": "^7.15.8",
