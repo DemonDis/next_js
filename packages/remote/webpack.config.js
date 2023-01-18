@@ -4,8 +4,8 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
-  // module: arg.mode === 'production' ? 'production' : 'development',
-  // devtool: arg.mode === 'production' ? 'source-map' : 'eval',
+  module: arg.mode === 'production' ? 'production' : 'development',
+  devtool: arg.mode === 'production' ? 'source-map' : 'eval',
 
   output: {
     publicPath: 'auto',
@@ -13,9 +13,9 @@ module.exports = (env, arg) => ({
 
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
-    // alias: {
-    //   'react-dom': '@hot-loader/react-dom'
-    // }
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
 
   devServer: {
@@ -55,31 +55,25 @@ module.exports = (env, arg) => ({
     new ModuleFederationPlugin({
       name: 'remote',
       filename: 'remoteEntry.js',
-      remotes: {
-        /* Example remotes
-          components: `components@${env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:3010' : '/components'}/remoteEntry.js`,
-        */
-      },
+      remotes: {},
       exposes: {
-        /* Example exposes
-          './Button': './src/components/Button.jsx',
-        */
+          './Button': './src/components/Button/index.jsx',
       },
       shared: {
         ...deps,
         react: {
-          singleton: true,
+          // singleton: true,
           requiredVersion: deps.react,
         },
         'react-dom': {
-          singleton: true,
+          // singleton: true,
           requiredVersion: deps['react-dom'],
         },
       },
     }),
     new HtmlWebPackPlugin({
       template: './public/index.html',
-      // favicon: './public/favicon.ico',
+      favicon: './public/favicon.ico',
     }),
   ],
 });
