@@ -1,12 +1,16 @@
 {
-  "private": true,
-  "scripts": {
-    "start": "next dev",
-    "build": "next build"
-  },
-  "dependencies": {
-    "next": "^13.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "name": "next_react",
+    "private": true,
+    "scripts": {
+        "build": "yarn workspaces run build",
+        "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+        "clean": "yarn workspaces run rimraf dist"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "dependencies": {
+        "concurrently": "^7.0.0",
+        "wsrun": "^5.2.4"
+    }
 }
