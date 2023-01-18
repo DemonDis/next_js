@@ -22,6 +22,6 @@ $ yarn build
   port: '3001',
   framework: 'react',
   language: 'JavaScript',
-  css: 'Tailwind',
+  css: 'CSS',
 })
 ```
