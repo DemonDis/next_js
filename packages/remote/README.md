@@ -1,4 +1,4 @@
-# remote_react
+# remote
 
 ## Build Setup
 
@@ -6,7 +6,7 @@
 # install dependencies
 yarn
 
-# serve with hot reload at localhost:9001
+# serve with hot reload at localhost:3001
 $ yarn start
 
 # build for production
@@ -18,10 +18,10 @@ $ yarn build
   type: 'Application',
   typeweb: 'SPA',
   toolsbuild: 'Webpack5',
-  name: 'remote_react',
-  port: '9001',
+  name: 'remote',
+  port: '3001',
   framework: 'react',
   language: 'JavaScript',
-  css: 'CSS',
+  css: 'Tailwind',
 })
 ```

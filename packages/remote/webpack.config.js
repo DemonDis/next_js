@@ -6,9 +6,10 @@ const deps = require('./package.json').dependencies;
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
-
+  entry: "./src/index.js",
+  
   output: {
-    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:3001/' : '/remote_react/',
+    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:3001/' : '/remote/',
   },
 
   resolve: {
@@ -53,7 +54,7 @@ module.exports = (env, arg) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'remote_react',
+      name: 'remote',
       filename: 'remoteEntry.js',
       remotes: {
         /* Example remotes
@@ -68,11 +69,11 @@ module.exports = (env, arg) => ({
       shared: {
         ...deps,
         react: {
-          // singleton: true,
+          singleton: true,
           requiredVersion: deps.react,
         },
         'react-dom': {
-          // singleton: true,
+          singleton: true,
           requiredVersion: deps['react-dom'],
         },
       },

@@ -1,9 +1,14 @@
 {
-  "name": "remote_react",
+  "name": "remote",
   "version": "1.0.0",
   "scripts": {
-    "build": "node git.js && webpack --mode production",
+    "build": "webpack --mode production",
     "start": "webpack serve --open --mode development"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Dmitry Shibikin",
+    "email": "dd@other-vision.com"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -21,7 +26,8 @@
     "style-loader": "^3.3.0",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "webpack-dev-server": "^4.3.1",
+    "tailwindcss": "^2.0.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
