@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/index.css';
 import dynamic from 'next/dynamic';
 console.log(__webpack_share_scopes__);
 const App = dynamic(

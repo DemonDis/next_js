@@ -7,7 +7,7 @@ module.exports = {
         new NextFederationPlugin({
           name: 'host',
           remotes: {
-            remote: 'remote@http://localhost:3001/remote.js',
+              remote: `remote@http://localhost:3001/remote.js`,
           },
           filename: 'static/chunks/remoteEntry.js',
         }),
