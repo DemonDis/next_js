@@ -4,8 +4,10 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
-  module: arg.mode === 'production' ? 'production' : 'development',
-  devtool: arg.mode === 'production' ? 'source-map' : 'eval',
+  entry: './src/index',
+  mode: 'development',
+  // module: arg.mode === 'production' ? 'production' : 'development',
+  // devtool: arg.mode === 'production' ? 'source-map' : 'eval',
   
   // optimization: {
   //   runtimeChunk: false
@@ -64,7 +66,21 @@ module.exports = (env, arg) => ({
       exposes: {
           './Button': './src/components/Button',
       },
-      shared: {},
+      shared: {
+        '@stitches/react': {
+          singleton: true,
+        },
+        react: {
+          singleton: true,
+          version: '0',
+          requiredVersion: false,
+        },
+        'react-dom': {
+          requiredVersion: false,
+          singleton: true,
+          version: '0',
+        },
+      },
     }),
     new HtmlWebPackPlugin({
       template: './public/index.html',
