@@ -6,6 +6,10 @@ const deps = require('./package.json').dependencies;
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
+  
+  // optimization: {
+  //   runtimeChunk: false
+  // },
 
   output: {
     publicPath: 'auto',
@@ -13,15 +17,15 @@ module.exports = (env, arg) => ({
 
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
+    // alias: {
+    //   'react-dom': '@hot-loader/react-dom'
+    // }
   },
 
   devServer: {
     port: 3010,
-    historyApiFallback: true,
-    headers: {'Access-Control-Allow-Origin': '*'}
+    // historyApiFallback: true,
+    // headers: {'Access-Control-Allow-Origin': '*'}
   },
 
   module: {
@@ -54,22 +58,13 @@ module.exports = (env, arg) => ({
   plugins: [
     new ModuleFederationPlugin({
       name: 'remote',
+      library: { type: 'var', name: 'remote' },
       filename: 'remoteEntry.js',
       remotes: {},
       exposes: {
-          './Button': './src/components/Button/index.jsx',
+          './Button': './src/components/Button',
       },
-      shared: {
-        ...deps,
-        react: {
-          // singleton: true,
-          requiredVersion: deps.react,
-        },
-        'react-dom': {
-          // singleton: true,
-          requiredVersion: deps['react-dom'],
-        },
-      },
+      shared: {},
     }),
     new HtmlWebPackPlugin({
       template: './public/index.html',

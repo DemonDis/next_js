@@ -1,1 +1,7 @@
 node_modules
+
+# Yarn Integrity file
+.yarn-integrity
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*

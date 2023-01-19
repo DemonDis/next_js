@@ -1,17 +1,26 @@
+// import Button from '../components/Button';
+import React, { Fragment, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 const RemoteButton = dynamic(() => import('remote/Button'), {
   ssr: false,
 });
 
+// const RemoteTitle = dynamic(
+//   () => {
+//     return import('remote/Button');
+//   },
+//   { ssr: false },
+// );
+
 export default function Home() {
   return (
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
-      <div>Name: host</div>
-      <div>Type: SSR</div>
-      <div>Framework: next</div>
-      <div>Language: JavaScript</div>
-      <div>CSS: Tailwind</div>
+    <div style={{ padding: '2%' }}>
+      <h1>Next JS and React</h1>
+      <h2>Host - Button</h2>
+      {/* <Button /> */}
+      <h2>Client - Button</h2>
       <RemoteButton />
+      {/* <RemoteTitle /> */}
     </div>
   );
 }
