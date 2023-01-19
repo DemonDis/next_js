@@ -8,6 +8,7 @@ module.exports = {
           name: 'host',
           remotes: {
               remote: `remote@http://localhost:3001/remote.js`,
+              remote_app_2: `remote_app_2@http://localhost:4001/remote.js`,
           },
           filename: 'static/chunks/remoteEntry.js',
         }),
