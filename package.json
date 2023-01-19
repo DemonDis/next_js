@@ -1,16 +1,17 @@
 {
-    "name": "WMF",
-    "private": true,
-    "scripts": {
-        "build": "yarn workspaces run build",
-        "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
-        "clean": "yarn workspaces run rimraf dist"
-    },
-    "workspaces": [
-        "packages/*"
-    ],
-    "dependencies": {
-        "concurrently": "^7.0.0",
-        "wsrun": "^5.2.4"
-    }
+  "name": "nextjs-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:apps": "concurrently \"yarn --cwd host-app\" \"yarn --cwd remote-app\"",
+    "start": "concurrently \"yarn --cwd remote-app start\" \"yarn --cwd host-app dev\"",
+    "e2e:ci": "yarn start & wait-on http-get://localhost:3000/ && npx cypress run --config-file ../cypress/config/cypress.config.ts --config '{\"supportFile\": \"../cypress/support/e2e.ts\"}' --spec \"./e2e/runAll*.cy.ts\" --browser=chrome"
+  },
+  "keywords": [],
+  "author": "rahulteja-dev",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
