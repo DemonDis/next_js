@@ -12,7 +12,7 @@ const App = dynamic(
 );
 
 function MyApp(props) {
-  return <App {...props} />;
+  return <App className="m-3" {...props} />;
 }
 
 export default MyApp;
