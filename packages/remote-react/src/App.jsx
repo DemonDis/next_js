@@ -1,7 +1,5 @@
 import React from "react";
-// import { hot } from 'react-hot-loader/root';
-
-// import "./styles/index.scss";
+import { hot } from 'react-hot-loader/root';
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
@@ -13,5 +11,6 @@ const App = () => (
     <div>CSS: Tailwind</div>
   </div>
 );
-// export default hot(App);
-export default App;
+
+export default hot(App);
+// export default App;
