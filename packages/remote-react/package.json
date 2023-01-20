@@ -1,5 +1,5 @@
 {
-  "name": "remote-app-2",
+  "name": "remote-react",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",

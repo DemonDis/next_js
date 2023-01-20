@@ -9,8 +9,8 @@ module.exports = (env, arg) => ({
   entry: './src/index',
 
   output: {
-    // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_app_2/',
-    publicPath: 'auto',
+    // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_react/',
+    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'auto' : '/remote_react/',
   },
 
   resolve: {
@@ -54,8 +54,8 @@ module.exports = (env, arg) => ({
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'remote_app_2',
-      library: { type: 'var', name: 'remote_app_2' },
+      name: 'remote_react',
+      library: { type: 'var', name: 'remote_react' },
       filename: 'remote.js',
       exposes: {
         './Button': './src/components/Button/index.jsx',

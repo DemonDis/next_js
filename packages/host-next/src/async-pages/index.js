@@ -1,8 +1,5 @@
 import dynamic from 'next/dynamic';
-const RemoteButton = dynamic(() => import('remote/Button'), {
-  ssr: false,
-});
-const RemoteButton2 = dynamic(() => import('remote_app_2/Button'), {
+const RemoteButton = dynamic(() => import('remote_react/Button'), {
   ssr: false,
 });
 export default function Home() {
@@ -10,7 +7,6 @@ export default function Home() {
     <div className="container">
       <div>Name: host</div>
       <RemoteButton />
-      <RemoteButton2 />
     </div>
   );
 }

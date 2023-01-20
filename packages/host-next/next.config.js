@@ -5,12 +5,10 @@ module.exports = {
     if (!options.isServer) {
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'host',
+          name: 'host_next',
           remotes: {
-              // remote: `remote@http://localhost:3001/remote.js`,
-              remote: `remote@https://demondis-automatic-halibut-xvgq4x4g96whv946-3001.preview.app.github.dev/remote.js`,
-              // remote_app_2: `remote_app_2@http://localhost:4001/remote.js`,
-              remote_app_2: `remote_app_2@https://demondis-automatic-halibut-xvgq4x4g96whv946-4001.preview.app.github.dev/remote.js`,
+              // remote_react: `remote_react@http://localhost:4001/remote.js`,
+              remote_react: `remote_react@https://demondis-automatic-halibut-xvgq4x4g96whv946-4001.preview.app.github.dev/remote.js`,
           },
           filename: 'static/chunks/remoteEntry.js',
         }),
