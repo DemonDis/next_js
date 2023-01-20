@@ -9,7 +9,8 @@ module.exports = (env, arg) => ({
   entry: './src/index',
 
   output: {
-    publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_app_2/',
+    // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_app_2/',
+    publicPath: 'auto',
   },
 
   resolve: {
