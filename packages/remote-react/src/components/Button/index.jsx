@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonReact = ({nameBtn}) => {
     return(
-        <button onClick={() => console.log('REACT BTN')}>
+        <button onClick={() => console.log('REACT BTN', nameBtn)}>
             REACT - {nameBtn}
         </button>
     )

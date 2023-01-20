@@ -1,8 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
-const deps = require('./package.json').dependencies;
-
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
@@ -55,20 +53,21 @@ module.exports = (env, arg) => ({
   plugins: [
     new ModuleFederationPlugin({
       name: 'remote_react',
-      library: { type: 'var', name: 'remote_react' },
+      // library: { type: 'var', name: 'remote_react' },
       filename: 'remote.js',
       exposes: {
         './Button': './src/components/Button/index.jsx',
       },
       shared: {
-        ...deps,
         react: {
-          // singleton: true,
-          requiredVersion: deps.react,
+          singleton: true,
+          version: '0',
+          requiredVersion: false,
         },
         'react-dom': {
-          // singleton: true,
-          requiredVersion: deps['react-dom'],
+          requiredVersion: false,
+          singleton: true,
+          version: '0',
         },
       },
     }),

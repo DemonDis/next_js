@@ -1,5 +1,4 @@
 # remote_app_2
-
 ## Build Setup
 
 ```bash
