@@ -6,8 +6,7 @@ import variables from '../styles/variables.module.scss';
 
 export default function Home() {
   return (
-    <div className="container">
-       
+    <div className="container m-4">
       <div>Name: host</div>
       <div>Async</div>
       <ButtonAsync nameBtn={'Async'}/>
