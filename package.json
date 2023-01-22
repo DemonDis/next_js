@@ -4,7 +4,8 @@
     "scripts": {
         "build": "yarn workspaces run build",
         "serve": "wsrun --parallel serve",
-        "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+        "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+        "e2e:ci": "yarn start & wait-on http-get://localhost:9001/ && npx cypress run --config-file ./cypress/config/cypress.config.ts --config '{\"supportFile\": \"./cypress/support/e2e.ts\"}' --spec \"./e2e/runAll*.cy.ts\" --browser=chrome"
     },
     "workspaces": [
         "packages/*"

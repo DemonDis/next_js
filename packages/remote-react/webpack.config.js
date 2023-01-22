@@ -1,6 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const deps = require('./package.json').dependencies;
+
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
@@ -59,16 +61,25 @@ module.exports = (env, arg) => ({
         './Button': './src/components/Button/index.jsx',
       },
       shared: {
+        ...deps,
         react: {
           singleton: true,
-          version: '0',
-          requiredVersion: false,
+          requiredVersion: deps.react,
         },
         'react-dom': {
-          requiredVersion: false,
           singleton: true,
-          version: '0',
+          requiredVersion: deps['react-dom'],
         },
+        // react: {
+        //   singleton: true,
+        //   version: '0',
+        //   requiredVersion: false,
+        // },
+        // 'react-dom': {
+        //   requiredVersion: false,
+        //   singleton: true,
+        //   version: '0',
+        // },
       },
     }),
     new HtmlWebPackPlugin({
