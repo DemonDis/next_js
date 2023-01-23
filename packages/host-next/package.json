@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm run open-browser && next dev -p 9001",
-    "open-browser": "open http://localhost:9001",
+    "start": "next dev -p 9001",
     "build": "next build"
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "6.0.1",
     "@next/font": "13.1.1",
     "@stitches/react": "^1.2.8",
+    "axios": "^1.2.3",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
