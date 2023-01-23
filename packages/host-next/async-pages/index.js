@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 const ButtonAsync = dynamic(() => import('remote_react/Button'), {ssr: false});
 import ButtonSync from 'remote_react/Button';
 
+import Diagram from '../components/Diagram';
 import variables from '../styles/variables.module.scss';
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
       <h1 style={{ color: variables.primaryColor }}>SCSS Next js</h1>
       <h4 className='btn-text'>CSS Next js class</h4>
       <h1 className="text-3xl font-bold underline p-3">Hello TAILWIND!</h1>
+      <div>Next components</div>
+      <Diagram />
     </div>
   );
 }

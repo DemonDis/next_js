@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .container {
   font-size: 3rem;
 }
