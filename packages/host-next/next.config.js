@@ -2,6 +2,7 @@ const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 const path = require('path');
 
 module.exports = {
+  distDir: 'build2',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
