@@ -9,6 +9,11 @@ const style = {
   padding: 12,
 };
 
+const style2 = {
+    height: '600px',
+    width: '600px',
+};
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
@@ -40,8 +45,12 @@ export const data = {
 
 const Diagram = () => {
     return (
-        <div>
-            <Pie data={data} />
+        <div style={style2}>
+            <Pie 
+                data={data}
+                width={100}
+                height={100}
+            />
             <button style={style}>Next JS Button</button>
         </div>
 
