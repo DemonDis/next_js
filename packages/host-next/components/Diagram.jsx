@@ -46,6 +46,7 @@ export const data = {
 const Diagram = () => {
     return (
         <div style={style2}>
+          {/* <h1 className="text-3xl font-bold underline p-3">Hello TAILWIND!</h1> */}
             <Pie 
                 data={data}
                 width={100}

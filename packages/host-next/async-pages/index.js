@@ -15,7 +15,7 @@ export default function Home() {
       <ButtonSync nameBtn={'Sync'}/>
       <h1 style={{ color: variables.primaryColor }}>SCSS Next js</h1>
       <h4 className='btn-text'>CSS Next js class</h4>
-      <h1 className="text-3xl font-bold underline p-3">Hello TAILWIND!</h1>
+      <h1 className="text-3xl font-bold underline p-3 ">Hello TAILWIND!</h1>
       <div>Next components</div>
       <Diagram />
     </div>
