@@ -4,12 +4,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 const style = {
-  background: '#ffc600',
-  color: '#000',
-  padding: 12,
-};
-
-const style2 = {
     height: '600px',
     width: '600px',
 };
@@ -45,14 +39,13 @@ export const data = {
 
 const Diagram = () => {
     return (
-        <div style={style2}>
+        <div style={style}>
           {/* <h1 className="text-3xl font-bold underline p-3">Hello TAILWIND!</h1> */}
             <Pie 
                 data={data}
                 width={100}
                 height={100}
             />
-            <button style={style}>Next JS Button</button>
         </div>
 
     )
