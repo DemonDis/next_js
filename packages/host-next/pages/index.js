@@ -1,4 +1,7 @@
 import dynamic from 'next/dynamic';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 const Page = dynamic(
   async () => {
     return import('../async-pages/index');
@@ -7,6 +10,13 @@ const Page = dynamic(
     ssr: false,
   },
 );
+
 export default function Home() {
-  return <Page />;
+  return (
+    <div>
+        <Header/>
+        <Page />
+        <Footer/>
+    </div>
+  );
 }
