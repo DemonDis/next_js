@@ -1,8 +1,9 @@
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 const path = require('path');
 
-module.exports = {
-  distDir: 'build2',
+module.exports = (phase, { defaultConfig }) => ({ 
+  // distDir: 'build2',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -13,9 +14,11 @@ module.exports = {
           name: 'host_next',
           filename: 'static/chunks/remoteEntry.js',
           remotes: {
-              remote_react: `remote_react@http://localhost:4001/remote.js`,
+              // remote_react: `remote_react@http://localhost:4001/remote.js`,
+              remote_react:  `remote_react@${phase === PHASE_DEVELOPMENT_SERVER ? 'http://localhost:4001' : '/remote_react'}/remote.js`,
               // import components CodeSpace GitHUB
-              // remote_react: `remote_react@https://demondis-jubilant-pancake-7pj4xwxj9pj3xx6r-4001.preview.app.github.dev/remote.js`,
+              // remote_react: `remote_react@https://demondis-reimagined-broccoli-jqpwg9gp49whpw44-4001.preview.app.github.dev/remote.js`,
+              // remote_react:  `remote_react@${phase === PHASE_DEVELOPMENT_SERVER ? 'https://demondis-reimagined-broccoli-jqpwg9gp49whpw44-4001.preview.app.github.dev' : '/remote_react'}/remote.js`,
           },
           exposes:{},
           shared: {}
@@ -25,4 +28,4 @@ module.exports = {
 
     return config;
   },
-};
+});
