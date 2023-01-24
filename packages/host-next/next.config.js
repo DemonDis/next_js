@@ -3,7 +3,7 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 const path = require('path');
 
 module.exports = (phase, { defaultConfig }) => ({ 
-  // distDir: 'build2',
+  distDir: 'host_next',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

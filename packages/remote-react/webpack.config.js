@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const path = require('path');
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, arg) => ({
@@ -11,6 +12,7 @@ module.exports = (env, arg) => ({
   output: {
     // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_react/',
     publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'auto' : '/remote_react/',
+    path: path.resolve(__dirname, 'remote_react'),
   },
 
   resolve: {
