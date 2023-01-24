@@ -20,7 +20,9 @@ module.exports = (phase, { defaultConfig }) => ({
               // remote_react: `remote_react@https://demondis-reimagined-broccoli-jqpwg9gp49whpw44-4001.preview.app.github.dev/remote.js`,
               // remote_react:  `remote_react@${phase === PHASE_DEVELOPMENT_SERVER ? 'https://demondis-reimagined-broccoli-jqpwg9gp49whpw44-4001.preview.app.github.dev' : '/remote_react'}/remote.js`,
           },
-          exposes:{},
+          exposes:{
+            './Button': './components/Button/Button.jsx',
+          },
           shared: {}
         }),
       );

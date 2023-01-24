@@ -61,25 +61,25 @@ module.exports = (env, arg) => ({
         './Button': './src/components/Button/index.jsx',
       },
       shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        'react-dom': {
-          singleton: true,
-          requiredVersion: deps['react-dom'],
-        },
+        // ...deps,
         // react: {
         //   singleton: true,
-        //   version: '0',
-        //   requiredVersion: false,
+        //   requiredVersion: deps.react,
         // },
         // 'react-dom': {
-        //   requiredVersion: false,
         //   singleton: true,
-        //   version: '0',
+        //   requiredVersion: deps['react-dom'],
         // },
+        react: {
+          singleton: true,
+          version: '0',
+          requiredVersion: false,
+        },
+        'react-dom': {
+          requiredVersion: false,
+          singleton: true,
+          version: '0',
+        },
       },
     }),
     new HtmlWebPackPlugin({
