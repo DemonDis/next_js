@@ -22,6 +22,9 @@ module.exports = (env, arg) => ({
 
   devServer: {
     port: 4001,
+    // For gitpod.io
+    host: '0.0.0.0',
+    allowedHosts: ['localhost', '.gitpod.io'],
     // historyApiFallback: true,
     // headers: {'Access-Control-Allow-Origin': '*'}
   },

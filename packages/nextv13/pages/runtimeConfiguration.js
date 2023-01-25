@@ -1,4 +1,4 @@
-import { Header } from 'components/Header'
+import { Header } from '../components/Header'
 import getConfig from 'next/config'
 import Head from 'next/head'
 

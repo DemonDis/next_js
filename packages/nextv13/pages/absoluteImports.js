@@ -1,6 +1,6 @@
-import { Header } from 'components/Header'
-import { MyComponent } from 'components/MyComponent'
-import { MyOtherComponent } from '@/components/MyOtherComponent'
+import { Header } from '../components/Header'
+import { MyComponent } from '../components/MyComponent'
+import { MyOtherComponent } from '../components/MyOtherComponent'
 import Head from 'next/head'
 
 export default function AbsoluteImports() {

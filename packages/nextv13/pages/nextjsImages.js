@@ -1,7 +1,7 @@
-import { Header } from 'components/Header'
+import { Header } from '../components/Header'
 import Image from 'next/image'
 import Head from 'next/head'
-import nyanCatImgSrc from 'public/nyan-cat.png'
+import nyanCatImgSrc from '../public/nyan-cat.png'
 
 export default function NextjsImages() {
   return (
