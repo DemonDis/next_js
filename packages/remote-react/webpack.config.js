@@ -12,7 +12,7 @@ module.exports = (env, arg) => ({
   output: {
     // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_react/',
     publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'auto' : '/remote_react/',
-    path: path.resolve(__dirname, 'remote_react'),
+    // path: path.resolve(__dirname, 'remote_react'),
   },
 
   resolve: {
