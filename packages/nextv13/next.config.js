@@ -19,9 +19,11 @@ module.exports = {
     if (!options.isServer) {
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'styory',
+          name: 'story',
           filename: 'static/chunks/remoteEntry.js',
-          remotes: {},
+          remotes: {
+            host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
+          },
           exposes:{},
           shared: {}
         }),

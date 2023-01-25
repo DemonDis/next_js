@@ -4,9 +4,9 @@ module.exports = withStorybookModuleFederation({
   name: 'host',
   filename: 'remoteEntry.js',
   remotes: {
-    /* Example remotes
-      components: `components@${process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : '/components'}/remoteEntry.js`,
-    */
+    // host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'http://localhost:9001' : '/host_next'}/remoteEntry.js`,
+// import components gitpod.io
+    host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
   },
   shared: {
     react: {
