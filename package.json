@@ -13,5 +13,11 @@
     "devDependencies": {
         "concurrently": "^7.0.0",
         "wsrun": "^5.2.4"
+    },
+    "dependencies": {
+        "@next/font": "13.1.5",
+        "next": "12.3.4",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     }
 }
