@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 
@@ -30,7 +30,7 @@ const Header = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <Link href='/' className={'text-gray-300 hover:bg-gray-700 hover:text-white'}>LOGIN</Link>
-                  <Link href='/monitor' className={'text-gray-300 hover:bg-gray-700 hover:text-white'}>Monitor</Link>
+                  <Link href='/monitor' className={'text-gray-300 hover:bg-gray-700 hover:text-white'}>MONITOR</Link>
                   <Link href='/analitic' className={'text-gray-300 hover:bg-gray-700 hover:text-white'}>ANALITIC</Link>           
                 </div>
               </div>
