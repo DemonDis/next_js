@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
-import Header2 from '../components/Header';
-import Footer from '../components/Footer';
+// import Link from 'next/link';
 
 const Page = dynamic(
   async () => {
@@ -11,22 +10,12 @@ const Page = dynamic(
   },
 );
 
-const Header = dynamic(
-  async () => {
-    return import('../async-pages/components/Header');
-  },
-  {
-    ssr: false,
-  },
-);
-
 export default function Home() {
+
   return (
     <div>
-        <Header/>
-        <Header2/>
-          <Page />
-        <Footer/>
+      {/* <Link href='/table'>Home</Link> */}
+      <Page/>
     </div>
   );
 }
