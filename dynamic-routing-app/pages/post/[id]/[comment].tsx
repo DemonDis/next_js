@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
-import Header from '../../../components/Header'
+import Header from '../../../components/header'
 
 export default function CommentPage() {
   const router = useRouter()
-  const id = router.query.id
-  const comment = router.query.comment 
+  const id = router.query.id as string
+  const comment = router.query.comment as string
 
   return (
     <>

@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Header from '../../../components/Header'
+import Header from '../../../components/header'
 
 export default function PostPage() {
   const router = useRouter()
-  const id = router.query.id
+  const id = router.query.id as string
 
   return (
     <>
@@ -12,10 +12,10 @@ export default function PostPage() {
       <h1>Post: {id}</h1>
       <ul>
         <li>
-          <Link href={`/table/${id}/first-comment`}>First comment</Link>
+          <Link href={`/post/${id}/first-comment`}>First comment</Link>
         </li>
         <li>
-          <Link href={`/table/${id}/second-comment`}>Second comment</Link>
+          <Link href={`/post/${id}/second-comment`}>Second comment</Link>
         </li>
       </ul>
     </>
