@@ -61,7 +61,8 @@ module.exports = (env, arg) => ({
       // library: { type: 'var', name: 'remote_react' },
       filename: 'remote.js',
       exposes: {
-        './Button': './src/components/Button/index.jsx',
+        './Button':   './src/components/Button/index.jsx',
+        './Login':    './src/components/Login/index.jsx',
       },
       shared: {
         // ...deps,
