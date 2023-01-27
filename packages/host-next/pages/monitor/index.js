@@ -2,8 +2,11 @@ import React from 'react';
 import Image from 'next/image'
 
 import profilePic from '../../public/assets/texture.jpg'
+import profileSvg from '../../public/assets/Arrow.svg'
 
 import Header from '../../components/Header';
+import SvgArrow from '../../components/SvgArrow';
+
 import variables from '../../styles/variables.module.scss';
 
 const Monitor = () => {
@@ -19,6 +22,15 @@ const Monitor = () => {
                 alt="me"
                 width="100%"
                 height="100%"
+            />
+            <Image
+                src={profileSvg}
+                alt="me"
+                width="50"
+                height="50"
+            />
+            <SvgArrow
+                size={20}
             />
         </div>
     )
