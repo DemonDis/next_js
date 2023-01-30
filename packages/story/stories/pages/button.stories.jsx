@@ -1,17 +1,15 @@
-import ButtonSt from '../../pages/button'
-// import Button from 'host_next/Button'
+import { Button } from 'remote_react/ReactComp';
+// const Button = React.lazy(() => import('remote_react/ReactComp'));
 
 export default {
   title: 'Pages',
-  component: ButtonSt
+  component: Button
 }
 
 export const ButtonPage = () => {
   return (
     <div>
-      <div>BUTTON</div>
-      {/* <Button/> */}
-      <ButtonSt/>
+      <Button/>
     </div>
   )
 }
