@@ -1,5 +1,5 @@
 import React from "react";
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 import './styles.scss'
 
 const ButtonReact = ({nameBtn}) => {
@@ -10,5 +10,5 @@ const ButtonReact = ({nameBtn}) => {
     )
 };
 
-export default hot(ButtonReact);
-// export default ButtonReact;
+// export default hot(ButtonReact);
+export default ButtonReact;

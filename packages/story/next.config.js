@@ -22,7 +22,8 @@ module.exports = {
           name: 'story',
           filename: 'static/chunks/remoteEntry.js',
           remotes: {
-            host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
+            // host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
+            host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'http://localhost:9001' : '/host_next'}/remoteEntry.js`,
           },
           exposes:{},
           shared: {}

@@ -59,7 +59,7 @@ module.exports = (env, arg) => ({
     new ModuleFederationPlugin({
       name: 'remote_react',
       // library: { type: 'var', name: 'remote_react' },
-      filename: 'remote.js',
+      filename: 'remoteEntry.js',
       exposes: {
         './ReactComp':   './src/components/index.jsx',
       },

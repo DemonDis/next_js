@@ -1,22 +1,23 @@
 const { withStorybookModuleFederation } = require('storybook-module-federation');
 
 module.exports = withStorybookModuleFederation({
-  name: 'host',
+  name: 'story_book',
   filename: 'remoteEntry.js',
   remotes: {
-    // host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'http://localhost:9001' : '/host_next'}/remoteEntry.js`,
+    remote_react: `remote_react@${process.env.NODE_ENV === 'development' ? 'http://localhost:4001' : '/remote_react'}/remoteEntry.js`,
+    host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'http://localhost:9001' : '/host_next'}/remoteEntry.js`,
 // import components gitpod.io
-    host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
+    // host_next: `host_next@${process.env.NODE_ENV === 'development' ? 'https://9001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io' : '/host_next'}/remoteEntry.js`,
   },
   shared: {
-    react: {
-      singleton: true,
-      requiredVersion: false,
-    },
-    'react-dom': {
-      singleton: true,
-      requiredVersion: false,
-    },
+    // react: {
+    //   singleton: true,
+    //   requiredVersion: false,
+    // },
+    // 'react-dom': {
+    //   singleton: true,
+    //   requiredVersion: false,
+    // },
   },
 })({
   stories: [
