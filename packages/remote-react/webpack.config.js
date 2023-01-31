@@ -7,7 +7,7 @@ const deps = require('./package.json').dependencies;
 module.exports = (env, arg) => ({
   module: arg.mode === 'production' ? 'production' : 'development',
   devtool: arg.mode === 'production' ? 'source-map' : 'eval',
-  entry: './src/index',
+  entry: './src/index.js',
 
   output: {
     // publicPath: env.hasOwnProperty('WEBPACK_SERVE') ? 'http://localhost:4001/' : '/remote_react/',

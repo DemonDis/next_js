@@ -1,6 +1,6 @@
-const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
-const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
-const path = require('path');
+// const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+// const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
+// const path = require('path');
 
 module.exports = (phase, { defaultConfig }) => ({ 
   // distDir: 'host_next',
@@ -31,4 +31,9 @@ module.exports = (phase, { defaultConfig }) => ({
     }
     return config;
   },
+  shared: {
+  },
+})({
+  // your original next.config.js export
+  reactStrictMode: true,
 });
