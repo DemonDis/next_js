@@ -23,7 +23,7 @@ module.exports = (phase, { defaultConfig }) => ({
               // remote_react:  `remote_react@${phase === PHASE_DEVELOPMENT_SERVER ? 'https://4001-demondis-nextjs-ag8mieut0c1.ws-eu84.gitpod.io/' : '/remote_react'}/remoteEntry.js`,
           },
           exposes:{
-            './Button': './components/Button.jsx',
+            './ButtonNext': './components/Button.jsx',
           },
           shared: {}
         }),
