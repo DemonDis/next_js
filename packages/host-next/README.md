@@ -5,16 +5,14 @@
 First, run the development server:
 
 ```bash
+# install
+yarn
+# or
+npm i
+# start
 npm run start
 # or
 yarn start
-```
-
-```js
-  "scripts": {
-    "start": "npm run open-browser && next dev -p 9001",
-    "open-browser": "open http://localhost:9001"
-  },
 ```
 
 ```js
