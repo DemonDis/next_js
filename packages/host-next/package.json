@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm run open-browser && next dev -p 9001",
-    "open-browser": "open http://localhost:9001",
+    "start": "start http://localhost:9001 && next dev -p 9001",
     "build": "next build"
   },
   "dependencies": {
